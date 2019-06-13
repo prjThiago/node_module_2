@@ -13,6 +13,7 @@ const DashboardController = require('./app/controllers/DashboardController')
 const FileController = require('./app/controllers/FileController')
 const AppointmentsController = require('./app/controllers/AppointmentsController')
 const AvailableController = require('./app/controllers/AvailableController')
+const ScheduleCOntroller = require('./app/controllers/ScheduleController')
 
 routes.use((req, res, next) => {
   res.locals.flashSuccess = req.flash('success')
@@ -39,4 +40,5 @@ routes.post('/app/appointments/new/:provider', AppointmentsController.store)
 
 routes.get('/app/available/:provider', AvailableController.index)
 
+routes.get('/app/schedule', ScheduleCOntroller.index)
 module.exports = routes

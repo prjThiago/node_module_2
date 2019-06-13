@@ -1,8 +1,7 @@
-'use strict';
+'use strict'
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-
     return queryInterface.createTable('appointments', {
       id: {
         allowNull: false,
@@ -16,14 +15,14 @@ module.exports = {
       },
       user_id: {
         type: Sequelize.INTEGER,
-        references: {model: 'users', key: 'id'},
+        references: { model: 'users', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
         allowNull: false
       },
       provider_id: {
         type: Sequelize.INTEGER,
-        references: {model: 'users', key: 'id'},
+        references: { model: 'users', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
         allowNull: false
@@ -40,7 +39,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-
-    return queryInterface.dropTable('appointments');
+    return queryInterface.dropTable('appointments')
   }
-};
+}
